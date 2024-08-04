@@ -275,6 +275,9 @@ function cargarDatos()
     // obtenemos variable de localstorage
     let todo = JSON.parse(localStorage.getItem('moneyManager'));
     // iniciamos primer bucle para obtener todos los bancos y transformarlos a su clase
+    console.log(todo);
+    if (todo != null )
+    {
     for(let i=0;i<todo['banco'].length;i++)
     {
         // convertimos cada uno
@@ -282,18 +285,29 @@ function cargarDatos()
         banco.push(x);
         
     }
+    }
+    else
+    {}
     // segundo bucle donde recorremos todos los bancos buscando ganancias
-    for(let i=0;i<todo['ingresos'].length;i++)
-        {
-            for(let j=0;j<banco.length;j++)
+    if(todo != null )
+    {
+
+        for(let i=0;i<todo['ingresos'].length;i++)
             {
-                if(banco[j].id == todo['ingresos'][i].id)
-                {
-                    y = new Ganancia(todo['ingresos'][i].fechaGanancia,banco[j],todo['ingresos'][i].motivo);
-                    ingresos.push(y);
-                }
+                for(let j=0;j<banco.length;j++)
+                    {
+                        if(banco[j].id == todo['ingresos'][i].id)
+                            {
+                                y = new Ganancia(todo['ingresos'][i].fechaGanancia,banco[j],todo['ingresos'][i].motivo);
+                                ingresos.push(y);
+                            }
+                    }
             }
-        }
+    }
+    if(todo != null )
+    {
+
+
         // tercer bucle recorremos lo mismo pero vamos para gastos
         for(let i=0;i<todo['gastos'].length;i++)
             {
@@ -306,6 +320,7 @@ function cargarDatos()
                     }
                 }
             }
+    }
     saldoTotal(banco);
     saldoPromedio(ingresos,gastos);
     addGastosView(gastos);
@@ -318,13 +333,17 @@ function cargarDatos()
 function actualizarId()
 {
     let todo = JSON.parse(localStorage.getItem('moneyManager'));
-    for(let i = 0;i<todo['banco'].length;i++)
+    if( todo != null)
     {
-        if (todo['banco'][i].id >= id)
-        {
-            id = todo['banco'][i].id+1;
-        }
-    }
+
+        for(let i = 0;i<todo['banco'].length;i++)
+            {
+                if (todo['banco'][i].id >= id)
+                    {
+                        id = todo['banco'][i].id+1;
+                    }
+                }
+            }
 }
 
 
