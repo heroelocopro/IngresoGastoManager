@@ -163,11 +163,11 @@ function saldoPromedio(ingresos,gastos)
     let resta = 0;
     for(let i = 0; i < ingresos.length; i++)
         {
-            suma += ingresos[i].valor;
+            suma += parseInt(ingresos[i].valor);
         }
     for(let i = 0; i < gastos.length; i++)
         {
-            resta += gastos[i].valor;
+            resta += parseInt(gastos[i].valor);
         }
     promedio = suma - resta;
     if (promedio > 0)
