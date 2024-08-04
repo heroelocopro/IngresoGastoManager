@@ -1,0 +1,64 @@
+
+#showFormMoney
+{
+    border:2px solid transparent;
+    border-radius: 5rem;
+}
+#showFormMoney:hover
+{
+    border:2px solid green;
+    border-radius: 5rem;
+    background: white;
+    cursor: pointer;
+}
+#closeFormMoney
+{
+    border:2px solid transparent;
+    border-radius: 5rem;
+}
+#closeFormMoney:hover
+{
+    border:2px solid red;
+    border-radius: 5rem;
+    background: white;
+    cursor: pointer;
+}
+.iconDelete
+{
+    border:2px solid transparent;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+.iconDelete:hover
+{
+    border:2px solid red;
+    border-radius: 5rem;
+    background: white;
+    cursor: pointer;
+}
+.iconEdit
+{
+    border:2px solid transparent;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+.iconEdit:hover
+{
+    border:2px solid yellow;
+    border-radius: 5rem;
+    background: white;
+    cursor: pointer;
+}
+
+#closeFormEditMoney
+{
+    border:2px solid transparent;
+    border-radius: 5rem;
+}
+#closeFormEditMoney:hover
+{
+    border:2px solid red;
+    border-radius: 5rem;
+    background: white;
+    cursor: pointer;
+}
